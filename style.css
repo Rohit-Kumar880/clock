@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe UI',sans-serif;
+
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #0b456b, #2137);
+}
+.heading{
+    justify-content: center;   
+     align-items:center;
+    /* position: absolute; */
+    /* display: flex; */
+    margin-bottom: 85rem;
+    color: grey;
+    /* font-size: 60px; */
+    font-size: 7.15rem;
+}
+.clock{
+    /* width: 500px; */
+    width: 31.25rem;
+    /* height: 500px; */
+    height: 31.25rem;
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #05263c, #000d1a);
+
+}
+.clock::before{
+    content: "";
+    /* width: 525px; */
+    width: 32.812rem;
+    /* height: 524px; */
+    height: 32.75rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right, #0049ff, #ee00ff);
+    /* box-sizing: 0 0 15px 15px rgba(0,0,0,0.2); */
+    box-sizing: 0 0 .937rem .937rem rgba(0,0,0,0.2);
+    z-index: -1;
+}
+.number{
+    transform: rotate(calc(30deg * var(--n)));
+    position: absolute;
+    text-align: center;
+    /* inset: 20px; */
+    inset: 1.25rem;
+    /* font-size: 40px; */
+    font-size: 2.5rem;
+    color: #00d9ff;
+    /* text-shadow: 0 0 12px #ee00ff; */
+    text-shadow: 0 0 .75rem #ee00ff;
+}
+
+.number b{
+    transform:rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+}
+.center-dot{
+    position: absolute;
+    /* width: 25px; */
+    width: 1.56rem;
+    /* height: 25px; */
+    height: 1.56rem;
+    background-color: #ee00ff;
+    border: 6px solid #00d9ff;
+    border-radius: 50%;
+
+}
+.hour-hand, .minute-hand, .second-hand{
+    --rotate:0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+    transform-origin: bottom;
+    /* border-radius: 30px 30px 0 0; */
+    border-radius: 1.875rem 1.875rem 0 0;
+}
+.hour-hand{
+    /* width: 12px; */
+    width: .75rem;
+    /* height: 130px; */
+    height: 8.125rem;
+    background: linear-gradient(#00d9ff, #ee00ff);
+}
+.minute-hand{
+    /* width: 12px; */
+    width: .75rem;
+    /* height: 190px; */
+    height: 11.875rem;
+    background: linear-gradient(to top, #00d9ff, #ee00ff);
+
+}
+
+.second-hand{
+    /* width: 6px; */
+    width:.375rem ;
+    /* height: 210px; */
+    height: 13.125rem;
+    background: linear-gradient(to top,#0049ff, #ee00ff);
+}
+@media(max-width:998px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width:768px){
+    html{
+        font-size: 45%;
+    }
+}
